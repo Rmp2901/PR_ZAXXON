@@ -28,10 +28,10 @@ public class Movimiento : MonoBehaviour
         
        
         
-        if (Input.GetButtonDown("Fire3"))
+        /*if (Input.GetButtonDown("Fire3"))
         {
             print("Se ha disparado");
-        }
+        }*/
         /*
         if (posX > limiteH && desplX > 0f)
         {
@@ -43,7 +43,8 @@ public class Movimiento : MonoBehaviour
             transform.position = new Vector3(posX, transform.position.y, transform.position.z);
         }
         */
-
+        //Este codigo es el bueno//
+        
         if((posX < limiteH || desplX < 0f) && (posX > -limiteH || desplX > 0f))
         {
             transform.Translate(Vector3.right * desplX * Time.deltaTime, Space.World);
@@ -53,6 +54,12 @@ public class Movimiento : MonoBehaviour
         {
             transform.Translate(Vector3.up * desplY * Time.deltaTime, Space.World);
         }
+
+
+
+
+
+
 
 
 

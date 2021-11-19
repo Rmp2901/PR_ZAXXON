@@ -33,7 +33,7 @@ public class LookAt : MonoBehaviour
         float newY = FollowPlayer.transform.position.y;
         float newZ = transform.position.z;
 
-        transform.position = new Vector3(newX, newY, newZ);
+        transform.position = new Vector3(newX, newY + 5f, newZ);
     }
 
 

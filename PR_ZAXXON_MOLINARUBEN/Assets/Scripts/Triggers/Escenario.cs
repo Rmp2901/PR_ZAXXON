@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoverColumna : MonoBehaviour
+public class Escenario : MonoBehaviour
 {
-    float speed;
     
-
-
+    float speed;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +16,12 @@ public class MoverColumna : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.back * Time.deltaTime * speed);
-        if (transform.position.z < -10f)
+        transform.Translate(Vector3.down * Time.deltaTime * speed);
+        if (transform.position.z < -30f)
         {
             Destroy(gameObject);
         }
-        
     }
+
+    
 }
