@@ -17,4 +17,9 @@ public class InicioJuego : MonoBehaviour
     {
         
     }
+
+    void Morir()
+    {
+        juegoSpeed = 0f;
+    }
 }

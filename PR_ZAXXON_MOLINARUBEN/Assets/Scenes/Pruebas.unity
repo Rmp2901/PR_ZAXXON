@@ -164,7 +164,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52972718}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -298,7 +298,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 428859818}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a4d0bf841686b841af93b7dcd980ef0, type: 3}
   m_Name: 
@@ -418,7 +418,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631292100}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 748450577}
   m_Layer: 0
   m_Name: Nave
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -612,6 +612,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inicioJuego: {fileID: 949031660}
+  instanciar: {fileID: 428859820}
+  mover: {fileID: -1527099324750415277, guid: 083fa6f8394da2b4185d09dd6e113a83, type: 3}
 --- !u!54 &748450577
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -624,9 +626,9 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &936159318 stripped
 GameObject:

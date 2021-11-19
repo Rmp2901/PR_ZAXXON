@@ -26,4 +26,8 @@ public class MoverColumna : MonoBehaviour
         }
         
     }
+    public void Parar()
+    {
+        speed = 0f;
+    }
 }

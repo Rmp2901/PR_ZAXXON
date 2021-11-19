@@ -12,15 +12,19 @@ public class PruebaMovimiento : MonoBehaviour
     Vector3 vector3;
     Vector3 vector4;
 
-    float speed = 5f;
+    float speed;
 
     public InicioJuego inicioJuego;
+    public Instanciar instanciar;
+    public MoverColumna mover;
 
     // Start is called before the first frame update
     void Start()
     {
         inicioJuego = GameObject.Find("InicioJuego").GetComponent<InicioJuego>();
         speed = inicioJuego.juegoSpeed;
+        instanciar = GameObject.Find("Instanciador").GetComponent<Instanciar>();
+        mover = GameObject.Find("Obstaculo").GetComponent<MoverColumna>();
     }
 
     // Update is called once per frame
@@ -43,4 +47,17 @@ public class PruebaMovimiento : MonoBehaviour
         
 
     }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Obstaculo")
+        {
+            inicioJuego.SendMessage("Morir");
+            mover.SendMessage("Parar");
+            instanciar.SendMessage("Parar");
+            GameObject.Find("Nave").SetActive(false);
+        }
+    }
+    
+        
+    
 }

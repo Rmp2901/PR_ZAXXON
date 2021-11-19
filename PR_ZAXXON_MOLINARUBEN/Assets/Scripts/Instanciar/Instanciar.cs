@@ -9,26 +9,28 @@ public class Instanciar : MonoBehaviour
     float intervalo;
     [SerializeField] float distancia;
     public InicioJuego inicioJuego;
+    float speed;
     // Start is called before the first frame update
     void Start()
     {
         //intervalo = 0.5f;
         distancia = 10f;
         inicioJuego = GameObject.Find("InicioJuego").GetComponent<InicioJuego>();
+        
         StartCoroutine("CrearObstaculo");
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        speed = inicioJuego.juegoSpeed;
     }
 
     IEnumerator CrearObstaculo()
     {
         while (true)
         {
-            float speed;
+
             speed = inicioJuego.juegoSpeed;
             intervalo = distancia / speed;
            
@@ -40,5 +42,10 @@ public class Instanciar : MonoBehaviour
 
             yield return new WaitForSeconds(intervalo);
         }
+    }
+    public void Parar()
+    {
+        StopCoroutine("CrearObstaculo");
+        speed = 0f;
     }
 }
