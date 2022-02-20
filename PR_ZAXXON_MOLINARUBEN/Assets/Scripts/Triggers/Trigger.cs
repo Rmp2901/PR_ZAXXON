@@ -19,11 +19,11 @@ public class Trigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Vector3 newPos = new Vector3(transform.position.x, transform.position.y, 180f);
+        Vector3 newPos = new Vector3(transform.position.x, transform.position.y, 301.4f);
         if (other.gameObject.name == "Cuerpo")
         {
             print("Ha chocao");
-            Instantiate(Objeto, newPos, Quaternion.Euler(90f,0f,0f));
+            Instantiate(Objeto, newPos, Quaternion.Euler(0f,0f,0f));
         }
     }
 }

@@ -28,7 +28,7 @@ public class LookAt : MonoBehaviour
         transform.LookAt(PointAt);
 
 
-        print(FollowPlayer.transform.position);
+
         float newX = FollowPlayer.transform.position.x;
         float newY = FollowPlayer.transform.position.y;
         float newZ = transform.position.z;

@@ -18,7 +18,7 @@ public class Escenario : MonoBehaviour
     void Update()
     {
         speed = inicioJuego.juegoSpeed;
-        transform.Translate(Vector3.down * Time.deltaTime * speed);
+        transform.Translate(Vector3.back * Time.deltaTime * speed);
         if (transform.position.z < -30f)
         {
             Destroy(gameObject);

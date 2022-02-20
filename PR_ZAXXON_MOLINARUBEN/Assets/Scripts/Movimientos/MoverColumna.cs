@@ -19,6 +19,7 @@ public class MoverColumna : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        speed = inicioJuego.juegoSpeed;
         transform.Translate(Vector3.back * Time.deltaTime * speed);
         if (transform.position.z < -10f)
         {
@@ -26,8 +27,5 @@ public class MoverColumna : MonoBehaviour
         }
         
     }
-    public void Parar()
-    {
-        speed = 0f;
-    }
+
 }
