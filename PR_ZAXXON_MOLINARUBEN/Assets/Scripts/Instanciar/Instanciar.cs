@@ -34,8 +34,9 @@ public class Instanciar : MonoBehaviour
             speed = inicioJuego.juegoSpeed;
             intervalo = distancia / speed;
            
-            float randomX = Random.Range(-20f, 20f);
-            Vector3 newPos = new Vector3(randomX, instantiatePos.position.y, instantiatePos.position.z);
+            float randomX = Random.Range(-18f, 18f);
+            float randomY = Random.Range(-18f, 18f);
+            Vector3 newPos = new Vector3(randomX, randomY, instantiatePos.position.z);
             Instantiate(Columna, newPos, Quaternion.identity);
 
             

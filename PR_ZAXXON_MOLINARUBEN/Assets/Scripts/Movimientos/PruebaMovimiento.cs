@@ -9,6 +9,7 @@ public class PruebaMovimiento : MonoBehaviour
 
     public InicioJuego inicioJuego;
     public Instanciar instanciar;
+    float rotationSpeed = 100f;
 
 
     // Start is called before the first frame update
@@ -28,6 +29,9 @@ public class PruebaMovimiento : MonoBehaviour
 
         transform.Translate(Vector3.right * Time.deltaTime * desplX);
         transform.Translate(Vector3.up * Time.deltaTime * desplY);
+
+        float desplR = Input.GetAxis("Rotation");
+        transform.Rotate(0f, 0f, desplR * Time.deltaTime * -rotationSpeed);
 
 
 
