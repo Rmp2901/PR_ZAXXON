@@ -10,6 +10,7 @@ public class InicioJuego : MonoBehaviour
     bool alive;
 
     public float score;
+    public ParticleSystem ps;
 
     //UI
 
@@ -17,6 +18,9 @@ public class InicioJuego : MonoBehaviour
     [SerializeField] GameObject GameOverCanvas;
     [SerializeField] Button ButtonRetry;
     [SerializeField] GameObject HUDCanvas;
+    [SerializeField] Text scoreText;
+
+    public AudioSource musica;
 
     // Start is called before the first frame update
     void Start()
@@ -24,9 +28,15 @@ public class InicioJuego : MonoBehaviour
         juegoSpeed = 20f;
         naveSpeed = 5f;
         alive = true;
+       
 
         GameOverCanvas.SetActive(false);
         HUDCanvas.SetActive(true);
+
+        ps = GetComponent<ParticleSystem>();
+
+        musica = GetComponent<AudioSource>();
+        musica.Play();
     }
 
     // Update is called once per frame
@@ -39,6 +49,8 @@ public class InicioJuego : MonoBehaviour
 
         float veloc = (juegoSpeed * 3600) / 1000;
         speedText.text = "S: " + Mathf.Round(veloc) + "Km/h";
+
+        score = veloc;
     }
 
     void Morir()
@@ -48,11 +60,13 @@ public class InicioJuego : MonoBehaviour
         alive = false;
         Invoke("MostrarGameOver", 2f);
 
-        /*if (score > GameManager.HighScore)
-        {
-            GameManager.HighScore = score;
+        
+        GameManager.PlayerScore = score;
+        scoreText.text = "Score: " + Mathf.Round(score) + "Km/h";
+        
+        
 
-        }*/
+        musica.Stop();
     }
 
     void MostrarGameOver()

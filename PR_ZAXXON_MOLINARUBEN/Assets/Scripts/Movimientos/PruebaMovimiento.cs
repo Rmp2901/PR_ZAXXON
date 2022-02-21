@@ -10,6 +10,8 @@ public class PruebaMovimiento : MonoBehaviour
     public InicioJuego inicioJuego;
     public Instanciar instanciar;
     float rotationSpeed = 100f;
+    ParticleSystem ps;
+    AudioSource musica;
 
 
     // Start is called before the first frame update
@@ -17,6 +19,8 @@ public class PruebaMovimiento : MonoBehaviour
     {
         inicioJuego = GameObject.Find("InicioJuego").GetComponent<InicioJuego>();
         speed = inicioJuego.naveSpeed;
+        ps = inicioJuego.ps;
+        musica = inicioJuego.musica;
         instanciar = GameObject.Find("Instanciador").GetComponent<Instanciar>();
 
     }
@@ -42,9 +46,9 @@ public class PruebaMovimiento : MonoBehaviour
         if (other.gameObject.tag == "Obstaculo")
         {
             inicioJuego.SendMessage("Morir");
-            
             instanciar.SendMessage("Parar");
             GameObject.Find("Nave").SetActive(false);
+            ps.Play();
         }
     }
     
